@@ -19,3 +19,8 @@ export interface ITrendingReposData {
     incomplete_results: boolean;
     items: ITrendingReposItemData[];
 }
+
+
+export interface ITrendingReposCardProps {
+    data?: ITrendingReposItemData[];
+}
