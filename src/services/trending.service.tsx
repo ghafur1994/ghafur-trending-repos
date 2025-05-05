@@ -1,22 +1,23 @@
 import axios from 'axios';
-import { ITrendingParamData } from '../interfaces/trending';
+import { ITrendingParamData } from '../interfaces/trending.interface';
+import { getDateNDaysAgo } from '../utils/date.utility';
 
 const BASE_URL = 'https://api.github.com/search/repositories';
 
 
 const fetchTrendingRepos = async ({
-  createdAfter,
-  sort,
-  order,
   page,
   pageSize
 }: ITrendingParamData) => {
   try {
 
-    console.log(`Debugs: ${createdAfter} - ${sort} - ${order} - ${page} - ${pageSize}`)
+    const sort = 'stars';
+    const order = 'desc';
+
+    console.log(`Debugs:  ${sort} - ${order} - ${page} - ${pageSize}`)
     const response = await axios.get(BASE_URL, {
       params: {
-        q: `created:>${createdAfter}`,
+        q: `created:>${getDateNDaysAgo(10)}`,
         sort: sort,
         order: order,
         page: page,

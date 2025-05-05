@@ -1,7 +1,7 @@
 export interface ITrendingParamData {
-    createdAfter:string;
-    sort: string;
-    order: 'asc' | 'desc';
+    //createdAfter?:string;
+    //sort?: string;
+    //order?: 'asc' | 'desc';
     page: number;
     pageSize: number;
 }
