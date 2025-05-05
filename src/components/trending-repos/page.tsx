@@ -7,6 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ResponsivePaginationComponent from "react-responsive-pagination";
 import TrendingReposCard from "../cards/trending.card";
 import '../../styles/pagination.style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Page = () => {
   const [page, setPage] = useState<number>(1);
@@ -57,34 +58,24 @@ const Page = () => {
   },[])
 
   return (
-    <div>
+    <div className="d-flex flex-column align-items-center justify-content-center min-vh-100">
       {loading ? (
         <CircularProgress />
       ) : (
-        <div>
-          <h2>Trending Repositories</h2>
-          {/* {JSON.stringify(trendingData)} */}
-           {trendingData?.map((repo, index) => (
-            <div key={index}>
-              <h3>{repo.name}</h3>
-              <p>{repo.description}</p>
-              <p>{repo.stargazers_count}</p>
-            </div>   
-          ))
-          }  
-
+        <div className="container">
           <TrendingReposCard
             data={trendingData}
           />
-
-          
-          <ResponsivePaginationComponent 
+          <nav className="mt-4">
+            <ResponsivePaginationComponent 
               current={page}
               total={pageCount}
               maxWidth={maxWidth}
               onPageChange={setPage}
-              className="my-pagination"
-            ></ResponsivePaginationComponent>
+              className="pagination"
+            />
+          </nav>
+          
           
         </div>
         

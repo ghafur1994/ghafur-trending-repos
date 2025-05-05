@@ -1,0 +1,75 @@
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.repos-card-container {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.repos-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.repo-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+}
+
+.repo-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.repo-description,
+.repo-stars {
+    display: block;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.repo-description {
+    color: #2980b9;
+}
+
+.repo-stars {
+    color: #f39c12;
+}
+
+.repo-description svg,
+.repo-stars svg {
+    margin-right: 8px;
+    vertical-align: middle;
+}
