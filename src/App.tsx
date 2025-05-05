@@ -9,7 +9,7 @@ const App = () => {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link to="/" className="navbar-brand">Abdul Ghafur Interview Project</Link>
+            <Link to="/page/trending-repos" className="navbar-brand">Abdul Ghafur Interview Project</Link>
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
